@@ -190,7 +190,7 @@ def _setupSSHDImpl(public_key, tunnel, ngrok_token, ngrok_region, mount_gdrive_t
     port = m.group(2)
     ssh_common_options += f" -p {port}"
   elif tunnel == "argotunnel":
-    _download("https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64", "cloudflared")
+    _download("https://github.com/cloudflare/cloudflared/releases/download/2023.4.2/cloudflared-fips-linux-amd64", "cloudflared")
     #shutil.unpack_archive("cloudflared.tgz")
     pathlib.Path("cloudflared").chmod(stat.S_IXUSR)
     cfd_proc = subprocess.Popen(
